@@ -1,296 +1,154 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Julien Fenoglio — Illustration & Concept Art</title>
-  <meta name="description" content="Illustration and concept art portfolio by Julien Fenoglio." />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ink:#1A1A1A; --gold:#D4A76A; --cream:#FAF7F2; --gray:#7F7F7F; --white:#FFFFFF;
-      --maxw:1200px; --g:24px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--cream);color:var(--ink)}
-    body{font-family:"Merriweather",serif; line-height:1.6;}
-    h1,h2,h3{font-family:"Montserrat",sans-serif; margin:0 0 .5rem 0; line-height:1.2}
-    h1{font-size:clamp(2rem,4.5vw,3.5rem)}
-    h2{font-size:clamp(1.4rem,2.5vw,2rem)}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;display:block}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-    /* Header */
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.9);backdrop-filter:saturate(1.4) blur(4px);border-bottom:1px solid #e9e1d8}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.5px}
-    .menu{display:flex;gap:16px;align-items:center;font-size:.95rem}
-    .menu a{padding:8px 10px;border-radius:12px}
-    .menu a:hover{background:var(--gold);color:var(--white)}
-    .menu-toggle{display:none}
-    /* Hero */
-    .hero{padding:56px 0 32px; display:grid; gap:16px; align-items:center}
-    .hero .lead{color:var(--gray); max-width:65ch}
-    .cta{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--white)}
-    .cta:hover{background:#000}
-    /* Section */
-    section{padding:40px 0;border-top:1px solid #eadfce}
-    .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px}
-    .section-head .sub{color:var(--gray);font-size:.95rem}
-    /* Grid */
-    .grid{display:grid;gap:var(--g)}
-    .grid.cards{grid-template-columns:repeat(3,1fr)}
-    @media (max-width:1024px){.grid.cards{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){
-      .grid.cards{grid-template-columns:1fr}
-      .menu{display:none}
-      .menu-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #e3d8c6;border-radius:12px;background:var(--white)}
-      .menu.open{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:var(--cream);padding:12px;border:1px solid #e3d8c6;border-radius:12px;margin-top:8px}
-    }
-    /* Card */
-    .card{border:1px solid #eadfce;border-radius:16px;overflow:hidden;background:var(--white)}
-    .card-media{position:relative;overflow:hidden}
-    .card-media img{transition:transform .2s ease-out}
-    .card:hover .card-media img{transform:scale(1.03)}
-    .badge{position:absolute;left:12px;top:12px;background:var(--gold);color:var(--white);font-family:"Montserrat",sans-serif;font-size:.75rem;padding:6px 10px;border-radius:999px}
-    .card-body{padding:14px}
-    .card-title{font-family:"Montserrat",sans-serif;font-size:1.05rem;margin-bottom:6px}
-    .card-meta{color:var(--gray);font-size:.9rem}
-    /* Light section alt */
-    .alt{background:linear-gradient(180deg,rgba(212,167,106,.08),transparent 120px)}
-    /* Footer */
-    footer{padding:32px 0;color:var(--gray)}
-    .sns{display:flex;gap:12px;flex-wrap:wrap}
-    /* Utility */
-    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid #e3d8c6;border-radius:999px;background:var(--white)}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Julien Fenoglio — Illustration & Concept Art</title>
+<meta name="description" content="Landing page for the portfolio of Julien Fenoglio." />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* ——— Tokens ——— */
+  :root{
+    --ink:#1A1A1A; --gold:#D4A76A; --cream:#FAF7F2; --paper:#F5EFE6; --muted:#8B8276; --white:#FFFFFF;
+    --maxw:1100px; --g:24px;
+  }
+  /* ——— Base ——— */
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:"Merriweather",serif;color:var(--ink);background:var(--paper);line-height:1.65}
+  /* subtle paper texture via layered gradients */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1;
+    background:
+      radial-gradient(1200px 600px at 30% -20%, rgba(212,167,106,.08), transparent 60%),
+      radial-gradient(900px 500px at 100% 20%, rgba(0,0,0,.05), transparent 65%),
+      linear-gradient(transparent 98%, rgba(0,0,0,.04) 100%),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.015) 0 2px, transparent 2px 6px);
+    filter: contrast(100%);
+  }
+  img{max-width:100%; height:auto; display:block}
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 18px}
+  /* ——— Header (subtle “ribbon”) ——— */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,239,230,.85); backdrop-filter: blur(6px) saturate(1.2);
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+  .brand{font-family:"Montserrat",sans-serif; font-weight:700; letter-spacing:.4px}
+  .menu{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+  .menu a{
+    font-family:"Montserrat",sans-serif; font-weight:500; font-size:.95rem;
+    padding:8px 12px; border-radius:999px; border:1px solid rgba(0,0,0,.08);
+    background:linear-gradient(var(--white), #fefbf7);
+  }
+  .menu a:hover{border-color:rgba(0,0,0,.18); box-shadow:0 1px 0 rgba(0,0,0,.05) inset}
+  /* ——— Hero ——— */
+  .hero{padding:72px 0 48px; text-align:center}
+  .kicker{letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; color:var(--muted)}
+  h1{font-family:"Montserrat",sans-serif; font-weight:700; font-size:clamp(2rem,4.2vw,3.2rem); line-height:1.15; margin:.4rem 0}
+  .sub{max-width:70ch; margin:0 auto; color:#5a564f}
+  .cta{display:inline-block; margin-top:16px; padding:10px 18px; border-radius:999px; background:var(--ink); color:var(--white)}
+  .cta:hover{background:#000}
+  /* ——— Entry grid ——— */
+  section{padding:28px 0}
+  .grid{display:grid; gap:var(--g)}
+  .grid.entries{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:960px){.grid.entries{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.grid.entries{grid-template-columns:1fr}}
+  .tile{
+    position:relative; overflow:hidden; border-radius:16px; border:1px solid rgba(0,0,0,.08);
+    background:var(--cream);
+    box-shadow:0 .5px 0 rgba(0,0,0,.03);
+  }
+  .tile-media{aspect-ratio:4/3; overflow:hidden; background:#ece6dc}
+  .tile-media img{width:100%; height:100%; object-fit:cover; transition:transform .25s ease-out}
+  .tile:hover .tile-media img{transform:scale(1.03)}
+  .tile-body{padding:14px 14px 16px}
+  .tile h3{font-family:"Montserrat",sans-serif; font-size:1.05rem; margin:0 0 4px}
+  .meta{font-size:.92rem; color:var(--muted)}
+  /* ——— Footer ——— */
+  footer{padding:40px 0 56px; color:var(--muted)}
+  .sns{display:flex; gap:14px; flex-wrap:wrap}
+  /* ——— Accessibility ——— */
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+</style>
 </head>
 <body>
   <!-- Header -->
-  <header class="site-header">
+  <header>
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Home">Julien Fenoglio</a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="navMenu" onclick="toggleMenu(this)">Menu</button>
-      <nav id="navMenu" class="menu" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#illustration">Illustration</a>
-        <a href="#concept">Concept Art</a>
-        <a href="#sketchbook">Sketchbook</a>
-        <a href="#news">News</a>
-        <a href="#shop"><strong>Shop</strong></a>
+      <nav class="menu" aria-label="Primary">
+        <a href="/work/">Work</a>
+        <a href="/illustration/">Illustration</a>
+        <a href="/concept/">Concept art</a>
+        <a href="/sketchbook/">Sketchbook</a>
+        <a href="/news/">News</a>
+        <a href="/shop/"><strong>Shop</strong></a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
   <main id="top" class="wrap">
-    <section class="hero" aria-labelledby="intro-title">
-      <div>
-        <h1 id="intro-title">Illustration & Concept Art</h1>
-        <p class="lead">Human-first worldbuilding; creatures, characters, and alt-history design. Premium alt covers; bespoke assets for games, fiction, and cultural projects.</p>
-        <a class="cta" href="#work">View work</a>
+    <section class="hero" aria-labelledby="t">
+      <div class="kicker">Illustration & concept art</div>
+      <h1 id="t">Human-first worldbuilding; folklore, science, and story.</h1>
+      <p class="sub">Premium alt covers; bespoke assets for games and fiction; creatures, characters, and environments with an authentic, handcrafted feel.</p>
+      <a class="cta" href="/work/">Enter the portfolio</a>
+    </section>
+
+    <!-- Entry points -->
+    <section aria-labelledby="entry">
+      <h2 id="entry" class="sr-only">Explore</h2>
+      <div class="grid entries">
+        <a class="tile" href="/work/">
+          <div class="tile-media"><img src="assets/cover-work.jpg" alt="Selected work cover" loading="lazy"></div>
+          <div class="tile-body">
+            <h3>Selected work</h3>
+            <div class="meta">Case studies; 6–12 images</div>
+          </div>
+        </a>
+        <a class="tile" href="/illustration/">
+          <div class="tile-media"><img src="assets/cover-illustration.jpg" alt="Illustration grid teaser" loading="lazy"></div>
+          <div class="tile-body">
+            <h3>Illustration</h3>
+            <div class="meta">Alt covers, interiors</div>
+          </div>
+        </a>
+        <a class="tile" href="/concept/">
+          <div class="tile-media"><img src="assets/cover-concept.jpg" alt="Concept art teaser" loading="lazy"></div>
+          <div class="tile-body">
+            <h3>Concept art</h3>
+            <div class="meta">Creatures, characters, environments</div>
+          </div>
+        </a>
+        <a class="tile" href="/sketchbook/">
+          <div class="tile-media"><img src="assets/cover-sketchbook.jpg" alt="Sketchbook teaser" loading="lazy"></div>
+          <div class="tile-body">
+            <h3>Sketchbook</h3>
+            <div class="meta">Plein air, studies</div>
+          </div>
+        </a>
+        <a class="tile" href="/news/">
+          <div class="tile-media"><img src="assets/cover-news.jpg" alt="News teaser" loading="lazy"></div>
+          <div class="tile-body">
+            <h3>News</h3>
+            <div class="meta">Talks, releases, signings</div>
+          </div>
+        </a>
+        <a class="tile" href="/shop/">
+          <div class="tile-media"><img src="assets/cover-shop.jpg" alt="Shop teaser" loading="lazy"></div>
+          <div class="tile-body">
+            <h3>Shop</h3>
+            <div class="meta">Prints, originals, merch</div>
+          </div>
+        </a>
       </div>
     </section>
   </main>
-
-  <!-- Work (per-project case studies, Nicholas Kole style) -->
-  <section id="work">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Selected Work</h2>
-        <span class="sub">Case studies · 6–12 images each</span>
-      </div>
-      <div class="grid cards">
-        <!-- Repeat .card for projects -->
-        <article class="card">
-          <a href="#" aria-label="Project: Arcane Relics">
-            <div class="card-media">
-              <span class="badge">Project</span>
-              <img src="assets/work-arcane-relics.jpg" alt="Arcane Relics cover artwork" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Arcane Relics</h3>
-              <div class="card-meta">Role: Illustrator · Tools: PS · Year: 2025</div>
-            </div>
-          </a>
-        </article>
-        <article class="card">
-          <a href="#">
-            <div class="card-media">
-              <span class="badge">Project</span>
-              <img src="assets/work-skyward-beasts.jpg" alt="Skyward Beasts concept sheet" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Skyward Beasts</h3>
-              <div class="card-meta">Creature design · 2025</div>
-            </div>
-          </a>
-        </article>
-        <article class="card">
-          <a href="#">
-            <div class="card-media">
-              <span class="badge">Project</span>
-              <img src="assets/work-iron-fable.jpg" alt="Iron Fable environment key art" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Iron Fable</h3>
-              <div class="card-meta">Environment · 2024</div>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Illustration (Claire Hummel simple grids) -->
-  <section id="illustration" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Illustration</h2>
-        <span class="sub">Grid selection</span>
-      </div>
-      <div class="grid cards">
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/ill-01.jpg" alt="Illustration 1" loading="lazy">
-          </div>
-          <div class="card-body"><h3 class="card-title">Alt Cover — Folklore</h3><div class="card-meta">2025</div></div>
-        </article>
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/ill-02.jpg" alt="Illustration 2" loading="lazy">
-          </div>
-          <div class="card-body"><h3 class="card-title">Interior — TTRPG</h3><div class="card-meta">2025</div></div>
-        </article>
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/ill-03.jpg" alt="Illustration 3" loading="lazy">
-          </div>
-          <div class="card-body"><h3 class="card-title">Poster — Exhibition</h3><div class="card-meta">2024</div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Concept Art -->
-  <section id="concept">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Concept Art</h2>
-        <span class="sub">Characters · Creatures · Environments</span>
-      </div>
-      <div class="grid cards">
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/con-01.jpg" alt="Creature lineup" loading="lazy">
-          </div>
-          <div class="card-body"><h3 class="card-title">Creature Lineup</h3><div class="card-meta">Silhouette pass · 2025</div></div>
-        </article>
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/con-02.jpg" alt="Character exploration" loading="lazy">
-          </div>
-          <div class="card-body"><h3 class="card-title">Character Explorations</h3><div class="card-meta">Variants · 2025</div></div>
-        </article>
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/con-03.jpg" alt="Environment keyframe" loading="lazy">
-          </div>
-          <div class="card-body"><h3 class="card-title">Environment Keyframe</h3><div class="card-meta">Lighting study · 2024</div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sketchbook (dense grid feel) -->
-  <section id="sketchbook" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Sketchbook</h2>
-        <span class="sub">Plein air · studies</span>
-      </div>
-      <div class="grid cards">
-        <article class="card"><img src="assets/sk-01.jpg" alt="Sketch 1" loading="lazy"></article>
-        <article class="card"><img src="assets/sk-02.jpg" alt="Sketch 2" loading="lazy"></article>
-        <article class="card"><img src="assets/sk-03.jpg" alt="Sketch 3" loading="lazy"></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- News -->
-  <section id="news">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>News</h2>
-        <a class="pill" href="#" aria-label="Subscribe to updates">Subscribe</a>
-      </div>
-      <div class="grid cards">
-        <article class="card">
-          <div class="card-body">
-            <h3 class="card-title">Signing at Lucca Comics</h3>
-            <div class="card-meta">Oct 2025</div>
-            <p>Meet & greet at the Old School Games pavilion; limited prints available.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-body">
-            <h3 class="card-title">New Creature Pack</h3>
-            <div class="card-meta">Sep 2025</div>
-            <p>10 printable models; folk-horror biome variant included.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop (RJ Palmer store vibe) -->
-  <section id="shop" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Shop</h2>
-        <span class="sub">Prints · originals · merch</span>
-      </div>
-      <div class="grid cards">
-        <article class="card">
-          <a href="#" rel="noopener">
-            <div class="card-media">
-              <span class="badge">Print</span>
-              <img src="assets/shop-print-01.jpg" alt="Print 01" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Skyward Beast — A3</h3>
-              <div class="card-meta">€25</div>
-            </div>
-          </a>
-        </article>
-        <article class="card">
-          <a href="#" rel="noopener">
-            <div class="card-media">
-              <span class="badge">Original</span>
-              <img src="assets/shop-original-01.jpg" alt="Original 01" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Plein Air Study</h3>
-              <div class="card-meta">€180</div>
-            </div>
-          </a>
-        </article>
-        <article class="card">
-          <a href="#" rel="noopener">
-            <div class="card-media">
-              <span class="badge">Merch</span>
-              <img src="assets/shop-merch-01.jpg" alt="Merch 01" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Sticker Sheet — Folklore</h3>
-              <div class="card-meta">€5</div>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer>
@@ -301,16 +159,8 @@
         <a href="#" aria-label="Bluesky">Bluesky</a>
         <a href="mailto:hello@example.com" aria-label="Email">Email</a>
       </div>
-      <p>© 2025 Julien Fenoglio · Content licensed All rights reserved.</p>
+      <p>© 2025 Julien Fenoglio; all rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    function toggleMenu(btn){
-      const nav=document.getElementById('navMenu');
-      const open=nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-  </script>
 </body>
 </html>
