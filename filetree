@@ -1,0 +1,18 @@
+/_config.yml
+/_layouts/
+  default.html
+/_includes/
+  head.html
+  header.html
+  footer.html
+/assets/
+  style.css           ← use the CSS you already created
+  /images/
+    work-arcane-relics.jpg
+    work-skyward-beasts.jpg
+    work-iron-fable.jpg
+index.html
+/work/
+  index.html
+  /arcane-relics/
+    index.html
