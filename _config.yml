@@ -1,2 +1,2 @@
-title: Julien Fenoglio Artwork
-baseurl: "/julfenart"   # "" for user site; "/repo-name" for project site
+title: Julien Fenoglio
+baseurl: "/julfenart"   # required for project sites
