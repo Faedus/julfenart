@@ -1,6 +1,8 @@
 /* ==========================================================================
    Julien Fenoglio – global styles (assets/style.css)
    ========================================================================== */
+/* sanity */
+html { background:#ffe; }  /* page should turn light yellow */
 
 /* --- COLOR + TYPOGRAPHY TOKENS --- */
 :root {
