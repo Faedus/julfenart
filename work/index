@@ -1,0 +1,52 @@
+---
+layout: default
+title: Projects
+description: Case studies and process highlights.
+---
+<section class="work-hero">
+  <h1>Projects</h1>
+  <p class="sub">Case studies; process; curated selections.</p>
+</section>
+
+<section aria-labelledby="projects">
+  <h2 id="projects" class="sr-only">Project list</h2>
+  <div class="grid projects">
+
+    <a class="project" href="{{ site.baseurl }}/work/arcane-relics/">
+      <div class="project-media">
+        <img src="{{ site.baseurl }}/assets/images/work-arcane-relics.jpg" alt="Arcane Relics key art" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3 class="project-title">Arcane Relics</h3>
+        <div class="project-meta">Illustration · 2025</div>
+        <p class="project-desc">Alt cover + interiors; folklore-inflected artifacts and rituals.</p>
+        <span class="project-cta">View project</span>
+      </div>
+    </a>
+
+    <a class="project" href="{{ site.baseurl }}/work/skyward-beasts/">
+      <div class="project-media">
+        <img src="{{ site.baseurl }}/assets/images/work-skyward-beasts.jpg" alt="Skyward Beasts concepts" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3 class="project-title">Skyward Beasts</h3>
+        <div class="project-meta">Creature design · 2025</div>
+        <p class="project-desc">Flight biomechanics; silhouettes; color passes.</p>
+        <span class="project-cta">View project</span>
+      </div>
+    </a>
+
+    <a class="project" href="{{ site.baseurl }}/work/iron-fable/">
+      <div class="project-media">
+        <img src="{{ site.baseurl }}/assets/images/work-iron-fable.jpg" alt="Iron Fable environment" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3 class="project-title">Iron Fable</h3>
+        <div class="project-meta">Environment · 2024</div>
+        <p class="project-desc">Keyframes; mood; visual rules for an industrial folk tale.</p>
+        <span class="project-cta">View project</span>
+      </div>
+    </a>
+
+  </div>
+</section>
